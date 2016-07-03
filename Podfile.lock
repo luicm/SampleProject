@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (3.3.1)
+  - Freddy (2.1.0)
+  - GSImageViewerController (1.1.1)
+  - Kingfisher (2.3.1)
+  - ReactKit (0.12.0):
+    - SwiftTask (~> 4.0.0)
+  - SwiftTask (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Freddy
+  - GSImageViewerController
+  - Kingfisher
+  - ReactKit
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Freddy: bbdca013977db29638b24baf6572ce94452bec29
+  GSImageViewerController: 1fd7ff9210bca2eaaeb89811c55230b575377143
+  Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
+  ReactKit: a2b705e8a8674b9cb38b8112c07891df87e8e62b
+  SwiftTask: 724ff63fc8bd9b366d242696d4aff098f6de3c3a
+
+PODFILE CHECKSUM: 2205e5d38e4767d2638fad99631c6c3f2999f040
+
+COCOAPODS: 1.0.0
