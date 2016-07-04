@@ -13,11 +13,41 @@ import GSImageViewerController
 class ArtObjectDetailViewController: UIViewController {
 
     @IBOutlet weak var artImage: UIImageView!
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var physicalMediumLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel! {
+        didSet {
+            artistNameLabel.hidden = true
+        }
+    }
+    @IBOutlet weak var physicalMediumLabel: UILabel! {
+        didSet {
+            physicalMediumLabel.hidden = true
+        }
+    }
+
+    @IBOutlet weak var yearLabel: UILabel! {
+        didSet {
+            yearLabel.hidden = true
+        }
+    }
+
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.hidden = true
+        }
+    }
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.hidden = true
+        }
+    }
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.startAnimating()
+        }
+    }
+    
+    
     
     var presenter: ArtObjectDetailPresenter!
     
@@ -28,20 +58,42 @@ class ArtObjectDetailViewController: UIViewController {
         didSet {
             guard let object = artObject else {return}
             if let imageURL = object.image!.url {
-                artImage.kf_setImageWithURL(NSURL(string: imageURL)!)
+                artImage.kf_setImageWithURL(NSURL(string: imageURL)!,
+                                             placeholderImage: nil,
+                                             optionsInfo: nil,
+                                             progressBlock: { (receivedSize, totalSize) -> () in
+                                                print("Download Progress: \(receivedSize)/\(totalSize)")
+                    },
+                                             completionHandler: { (image, error, cacheType, imageURL) -> () in
+                                                self.activityIndicator.stopAnimating()
+                    })
             }
+            
+            artistNameLabel.hidden = false
             artistNameLabel.text = object.principalMakers
+            
             physicalMediumLabel.text = object.physicalMedium
+            physicalMediumLabel.hidden = false
+            
             if let date = object.date {
                 yearLabel.text = "\(date)"
+                yearLabel.hidden = false
             }
+            
             titleLabel.text = object.title
+            titleLabel.hidden = false
             descriptionLabel.text = object.labelDescription == nil ? object.description : object.labelDescription
+            descriptionLabel.hidden = false
         }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter = ArtObjectDetailPresenter(delegate: self, objectId: objectId!)
     }
     

@@ -312,11 +312,15 @@
                                                 </constraints>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-5a-GVd">
+                                                <rect key="frame" x="290" y="170" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="eGJ-y8-UKn" firstAttribute="top" secondItem="KUe-4P-AKg" secondAttribute="bottom" constant="14" id="0yD-RX-KaJ"/>
                                             <constraint firstItem="u5b-bf-F18" firstAttribute="trailing" secondItem="eGJ-y8-UKn" secondAttribute="trailing" id="662-hB-Dy8"/>
                                             <constraint firstItem="u5b-bf-F18" firstAttribute="top" secondItem="eGJ-y8-UKn" secondAttribute="bottom" constant="8" id="69h-qg-o8l"/>
+                                            <constraint firstItem="ReC-5a-GVd" firstAttribute="centerX" secondItem="lL6-OQ-UwB" secondAttribute="centerX" id="6AS-7Q-jkH"/>
                                             <constraint firstItem="KUe-4P-AKg" firstAttribute="top" secondItem="lL6-OQ-UwB" secondAttribute="top" id="CHh-IZ-vbJ"/>
                                             <constraint firstItem="u5b-bf-F18" firstAttribute="leading" secondItem="eGJ-y8-UKn" secondAttribute="leading" id="CVB-Rv-HTX"/>
                                             <constraint firstAttribute="trailing" secondItem="eGJ-y8-UKn" secondAttribute="trailing" constant="20" id="D2r-jL-NDk"/>
@@ -326,6 +330,7 @@
                                             <constraint firstItem="eGJ-y8-UKn" firstAttribute="leading" secondItem="lL6-OQ-UwB" secondAttribute="leading" constant="20" id="f2B-yq-wvd"/>
                                             <constraint firstAttribute="trailing" secondItem="KUe-4P-AKg" secondAttribute="trailing" id="wBl-en-RdW"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u5b-bf-F18" secondAttribute="bottom" constant="20" id="wM6-xa-qsH"/>
+                                            <constraint firstItem="ReC-5a-GVd" firstAttribute="centerY" secondItem="KUe-4P-AKg" secondAttribute="centerY" id="wb7-OS-04E"/>
                                             <constraint firstItem="O7u-py-hD7" firstAttribute="bottom" secondItem="KUe-4P-AKg" secondAttribute="bottom" id="yOy-De-jhH"/>
                                         </constraints>
                                     </view>
@@ -350,6 +355,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ReC-5a-GVd" id="qkp-5H-qIe"/>
                         <outlet property="artImage" destination="KUe-4P-AKg" id="2kn-fM-79B"/>
                         <outlet property="artistNameLabel" destination="eGJ-y8-UKn" id="JD2-rx-ta7"/>
                         <outlet property="descriptionLabel" destination="u5b-bf-F18" id="C6Y-kG-s8a"/>

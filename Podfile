@@ -7,5 +7,4 @@ target 'SampleProject' do
     pod 'ReactKit'
     pod 'Kingfisher'
     pod 'GSImageViewerController'
-
 end

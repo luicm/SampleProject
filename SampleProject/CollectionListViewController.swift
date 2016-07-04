@@ -74,6 +74,7 @@ extension CollectionListViewController {
         
         if let image = object.headerImage, let imageURL = NSURL(string: image.url!){
             cell.artObjectImage.kf_setImageWithURL(imageURL)
+            cell.artObjectImage.kf_setImageWithURL(imageURL, placeholderImage: UIImage(named: "placeholderImage"))
         }
         
         cell.artistName.text = object.principalOrFirstMaker
