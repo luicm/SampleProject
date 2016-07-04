@@ -17,6 +17,7 @@ class CollectionListViewController: UICollectionViewController {
     private var artObjects: [ArtObject]? {
         didSet {
             self.collectionView?.reloadData()
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
     
@@ -35,6 +36,7 @@ class CollectionListViewController: UICollectionViewController {
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.title = NSLocalizedString("Rijks Collection", comment: "Section title")
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
     // MARK: - Navigation

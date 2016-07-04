@@ -13,6 +13,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
@@ -23,6 +24,8 @@ class StartViewController: UIViewController {
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
     }
     
-    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
 

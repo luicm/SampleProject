@@ -25,8 +25,6 @@ class AgendaDatePickerCell: UITableViewCell {
         datePicker.minimumDate = NSDate()
         datePicker.tintColor = UIColor.whiteColor()
         self.selectionStyle = .None
-        
-
     }
     
     @IBAction func datePickerViewDidChangeValue(sender: ColoredDatePicker) {
