@@ -48,6 +48,7 @@ class EventCell: UITableViewCell {
         typeLabel.text = event.groupType
         if let remaining = event.remaining {
             availabilityLabel.text = "\(remaining)"
+            getTicketsButton.enabled = remaining > 0 ? true : false
         }
         if let price = event.price {
             priceLabel.text = "\(price) €"

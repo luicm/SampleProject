@@ -23,7 +23,9 @@ class AgendaDatePickerCell: UITableViewCell {
 
         datePicker.calendar = NSCalendar.currentCalendar()
         datePicker.minimumDate = NSDate()
+        datePicker.tintColor = UIColor.whiteColor()
         self.selectionStyle = .None
+        
 
     }
     

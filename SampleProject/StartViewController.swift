@@ -9,7 +9,7 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -21,6 +21,8 @@ class StartViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
-    }    
+    }
+    
+    
 }
 

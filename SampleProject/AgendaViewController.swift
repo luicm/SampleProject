@@ -28,7 +28,7 @@ class AgendaViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.title = "Agenda"
+        self.title = NSLocalizedString("Agenda", comment: "Section title")
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

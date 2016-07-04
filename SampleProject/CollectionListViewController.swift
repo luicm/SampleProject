@@ -34,7 +34,7 @@ class CollectionListViewController: UICollectionViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.title = "Rijks Collection"
+        self.title = NSLocalizedString("Rijks Collection", comment: "Section title")
     }
     
     // MARK: - Navigation

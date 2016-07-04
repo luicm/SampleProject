@@ -72,7 +72,7 @@ class ArtObjectDetailViewController: UIViewController {
             artistNameLabel.hidden = false
             artistNameLabel.text = object.principalMakers
             
-            physicalMediumLabel.text = object.physicalMedium
+            physicalMediumLabel.text = object.physicalMedium?.capitalizedString
             physicalMediumLabel.hidden = false
             
             if let date = object.date {
