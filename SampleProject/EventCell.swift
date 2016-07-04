@@ -46,8 +46,12 @@ class EventCell: UITableViewCell {
         eventType.text = event.expositionType
         eventName.text = event.name
         typeLabel.text = event.groupType
-        availabilityLabel.text = "\(event.remaining)"
-        priceLabel.text = "\(event.price) €"
+        if let remaining = event.remaining {
+            availabilityLabel.text = "\(remaining)"
+        }
+        if let price = event.price {
+            priceLabel.text = "\(price) €"
+        }
         learnMoreURL = event.descriptionURL
         getTicketsURL = event.ticketsURL
         
